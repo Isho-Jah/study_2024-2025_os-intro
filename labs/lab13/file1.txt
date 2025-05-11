@@ -1,0 +1,12 @@
+while getopts "i:o:p:C:n" opt
+do
+case $opt in
+i)inputfile="$OPTARG";;
+o)outputfile="$OPTARG";;
+p)template="$OPTARG";;
+c)register="$OPTARG";;
+n)number="";;
+esac
+done
+
+grep -n "$template" "$inputfile.txt" > "$outputfile.txt"
